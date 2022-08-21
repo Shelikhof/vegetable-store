@@ -1,0 +1,56 @@
+@import '../../scss/components/container';
+@import '../../scss/libs/variables';
+
+.wrapper {
+	height: 55px;
+	display: none;
+	justify-content: space-between;
+
+	@media (max-width: 1024px) {
+		display: flex;
+	}
+	div {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+}
+.wrapperItemsLeft {
+	margin-left: 16px;
+	button {
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+	}
+}
+.userIcon {
+	background: $yellow;
+	height: 100%;
+	width: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cartIcon {
+	position: relative;
+
+	div {
+		top: -5px;
+		right: -8px;
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		background: $red;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		span {
+			color: $white;
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 7px;
+		}
+	}
+}

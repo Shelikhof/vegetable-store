@@ -1,0 +1,40 @@
+@import './libs/normalize';
+
+.title {
+	font-size: 24px;
+	line-height: 33px;
+	color: #000000;
+	display: inline-block;
+	position: relative;
+	@media (max-width: 768px) {
+		font-size: 18px;
+		line-height: 24px;
+	}
+	&::before {
+		display: block;
+		content: '';
+		width: 10px;
+		height: 2px;
+		background: $yellow;
+		position: absolute;
+		top: 16px;
+		left: -16px;
+		@media (max-width: 768px) {
+			top: 13px;
+		}
+	}
+
+	&::after {
+		display: block;
+		content: '';
+		width: 10px;
+		height: 2px;
+		background: $yellow;
+		position: absolute;
+		top: 16px;
+		right: -16px;
+		@media (max-width: 768px) {
+			top: 13px;
+		}
+	}
+}

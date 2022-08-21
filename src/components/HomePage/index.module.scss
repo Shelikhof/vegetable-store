@@ -1,0 +1,366 @@
+@import '../../scss/components/container';
+@import '../../scss/libs/variables';
+
+.chooseWrapper {
+	background-image: url('../../assets/img/header-bg.jpg');
+	background-position: center;
+	background-size: cover;
+	padding-top: 100px;
+	padding-bottom: 160px;
+
+	@media (max-width: 1280px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	&Title {
+		text-align: center;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 49px;
+		margin-bottom: 16px;
+
+		@media (max-width: 1280px) {
+			font-size: 24px;
+			line-height: 33px;
+		}
+
+		&Red {
+			color: $red;
+		}
+
+		&Yellow {
+			color: $yellow;
+		}
+	}
+
+	&SubTitle {
+		text-align: center;
+		margin-bottom: 40px;
+
+		@media (max-width: 1280px) {
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.locationSelectWrapper {
+	height: 85px;
+	background: #fff;
+	display: flex;
+	gap: 8px;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 20px;
+	margin-bottom: 160px;
+
+	@media (max-width: 1280px) {
+		display: block;
+		height: auto;
+		padding: 30px 15px 15px 15px;
+		margin-bottom: 0;
+	}
+
+	input {
+		border: 1px solid #f0f0f0;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 25px;
+		padding: 5px 8px;
+		border-radius: 5px;
+		transition: all 0.5s;
+	}
+	input:focus {
+		border: 1px solid #6c7584;
+		border-radius: 5px;
+	}
+	&Sign {
+		position: absolute;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 19px;
+		color: #6c7584;
+		background: #fff;
+		top: -16px;
+		left: 8px;
+		padding: 3px;
+		padding-bottom: 0;
+	}
+
+	&City {
+		margin-top: 32px;
+		margin-left: 25px;
+		position: relative;
+
+		@media (max-width: 1280px) {
+			margin: 0;
+			width: 100%;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #d9dfec;
+		}
+	}
+
+	&Region {
+		position: relative;
+		margin-top: 32px;
+		@media (max-width: 1280px) {
+			margin: 0;
+			width: 100%;
+			margin-top: 35px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #d9dfec;
+		}
+	}
+
+	&Map {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		&::before {
+			content: '';
+			width: 1px;
+			height: 50px;
+			background: #d9dfec;
+		}
+		&::after {
+			content: '';
+			width: 1px;
+			height: 50px;
+			background: #d9dfec;
+		}
+
+		svg {
+			path {
+				transition: all 0.5s;
+			}
+		}
+		&:hover {
+			svg {
+				path {
+					transform: translateY(-4px);
+				}
+			}
+		}
+		@media (max-width: 1280px) {
+			margin-top: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #d9dfec;
+
+			&::after {
+				display: none;
+			}
+			&::before {
+				display: none;
+			}
+		}
+		svg {
+			margin-left: 22px;
+			@media (max-width: 1280px) {
+				margin-left: 0;
+			}
+		}
+		span {
+			color: $yellow;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-right: 22px;
+		}
+	}
+
+	&StoreList {
+		position: relative;
+		margin-top: 35px;
+		display: flex;
+		gap: 8px;
+
+		@media (max-width: 1280px) {
+			margin-top: 35px;
+			margin-bottom: 15px;
+		}
+		img {
+			cursor: pointer;
+			width: 32px;
+			height: 32px;
+			border-radius: 100%;
+		}
+		span {
+			top: -20px;
+		}
+	}
+	&Btn {
+		width: 305px;
+		background: $red;
+		border-radius: 8px;
+		margin-right: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px;
+		gap: 5px;
+		cursor: pointer;
+		svg {
+			transition: all 0.5s;
+		}
+		&:hover {
+			svg {
+				transform: translateX(4px);
+			}
+		}
+		@media (max-width: 1280px) {
+			margin: 0 auto;
+			padding: 10px;
+			width: 285px;
+		}
+		span {
+			color: #fff;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+			text-transform: uppercase;
+
+			@media (max-width: 1280px) {
+				font-size: 16px;
+			}
+		}
+	}
+}
+// ======================================GroceryList==============================================
+
+.groceryListWrapper {
+	padding-top: 40px;
+
+	div {
+		@media (max-width: 768px) {
+			overflow: auto;
+		}
+	}
+}
+
+.groceryList {
+	display: flex;
+	gap: 40px;
+	justify-content: center;
+	padding: 40px 0;
+	@media (max-width: 768px) {
+		gap: 8px;
+		width: 712px;
+		padding-top: 16px;
+	}
+
+	&Title {
+		text-align: center;
+		margin-bottom: 15px;
+		width: auto;
+	}
+	&SubTitle {
+		font-weight: 400;
+		text-align: center;
+		@media (max-width: 768px) {
+			font-size: 14px;
+			line-height: 19px;
+		}
+	}
+}
+//==========================================FoodSet=====================================================
+.foodSet {
+	&Wrapper {
+		padding: 40px 0;
+	}
+	&MoreBtn {
+		margin: 0 auto;
+		margin-top: 40px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		span {
+			color: $yellow;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 22px;
+			text-transform: uppercase;
+		}
+		svg {
+			transition: all 0.5s;
+		}
+		&:hover {
+			svg {
+				transform: translateY(5px);
+			}
+		}
+	}
+	&Title {
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&SubTitle {
+		margin-top: 16px;
+		text-align: center;
+	}
+	&List {
+		display: flex;
+		gap: 35px;
+		margin-top: 40px;
+
+		&Wrapper {
+			@media (max-width: 1280px) {
+				overflow: auto;
+			}
+		}
+	}
+}
+
+//=======================================SearchMore=================================================
+
+.foodSearchWrapper {
+	background-image: url('../../assets/img/bottomBg.jpg');
+	background-size: cover;
+	background-position: center;
+	padding: 40px 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@media (max-width: 768px) {
+		background-position: right;
+	}
+	p {
+		font-size: 24px;
+		line-height: 33px;
+		text-align: center;
+		color: #fff;
+		@media (max-width: 768px) {
+			font-size: 18px;
+			line-height: 20px;
+		}
+	}
+	button {
+		margin-top: 40px;
+		background: $red;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		padding: 17px 24px;
+		svg {
+			transition: all 0.5s;
+		}
+		&:hover {
+			svg {
+				transform: translateX(4px);
+			}
+		}
+		@media (max-width: 1024px) {
+			padding: 9px 16px;
+			margin-top: 16px;
+		}
+		span {
+			font-size: 16px;
+			line-height: 22px;
+			color: #fff;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+}

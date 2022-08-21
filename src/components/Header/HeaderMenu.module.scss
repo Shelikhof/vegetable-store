@@ -1,0 +1,44 @@
+.wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+
+.menuWrapper {
+	width: 260px;
+	height: 100vh;
+	background: #fff;
+	padding: 8px 16px;
+	animation-duration: 0.5s;
+	animation-name: showMenu;
+	@keyframes showMenu {
+		from {
+			transform: translateX(-100%);
+		}
+
+		to {
+			transform: translateX(0);
+		}
+	}
+	div {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		margin-bottom: 40px;
+
+		button {
+			cursor: pointer;
+		}
+	}
+}
+
+.menu {
+	li {
+		margin-bottom: 24px;
+		cursor: pointer;
+	}
+}

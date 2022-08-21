@@ -1,0 +1,27 @@
+@import '../../scss/components/container';
+
+.footerWrapper {
+	background: #2e364b;
+}
+
+.footerItems {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 0;
+	gap: 16px;
+	@media (max-width: 420px) {
+		flex-direction: column-reverse;
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 21px;
+		color: #fff;
+	}
+	div {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+}
