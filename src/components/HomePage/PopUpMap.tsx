@@ -1,7 +1,11 @@
 import React from 'react';
 
 const PopUpMap = () => {
-	return <div></div>;
+	return (
+		<div>
+			<p></p>
+		</div>
+	);
 };
 
 export default PopUpMap;
