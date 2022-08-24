@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './index.module.scss';
-import locationIcon from '../../assets/img/location-icon.svg';
 import logo1 from '../../assets/img/logos/logo1.svg';
 import logo2 from '../../assets/img/logos/logo2.svg';
 import logo3 from '../../assets/img/logos/logo3.svg';
 import logo4 from '../../assets/img/logos/logo4.svg';
 import logo5 from '../../assets/img/logos/logo5.svg';
 import GroceryItem from './GroceryItem';
-import FoodSetItem from './FoodSetItem';
+import FoodSetItem from '../FoodSet/FoodSetItem';
+import ChooseMapPopUp from './ChooseMapPopUp';
 
 const Home: React.FC = () => {
+	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<div>
+		<>
+			{isOpen && <ChooseMapPopUp isOpen setIsOpen={setIsOpen} />}
 			<div className={styles.chooseWrapper}>
 				<div className={styles.container}>
 					<p className={styles.chooseWrapperTitle}>
@@ -32,8 +34,9 @@ const Home: React.FC = () => {
 							<span className={styles.locationSelectWrapperSign}>Region</span>
 							<input type='text' value='Whitiora' />
 						</div>
-						<div className={styles.locationSelectWrapperMap}>
+						<div className={styles.locationSelectWrapperMap} onClick={() => setIsOpen(true)}>
 							<svg
+								className={styles.mapIcon}
 								width='40'
 								height='40'
 								viewBox='0 0 40 40'
@@ -152,7 +155,7 @@ const Home: React.FC = () => {
 					</svg>
 				</button>
 			</div>
-		</div>
+		</>
 	);
 };
 

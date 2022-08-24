@@ -1,0 +1,231 @@
+@import '../../scss/libs/variables';
+
+.wrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+
+.body {
+	width: 1000px;
+	height: 700px;
+	background: white;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	.btnWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		flex-grow: 1;
+		.applyBtn {
+			display: block;
+			padding: 22px 160px;
+			background: $red;
+			border-top: 1px solid #d9dfec;
+			border-radius: 10px;
+			color: #fff;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+			transition: all 0.5s;
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+	}
+}
+
+.header {
+	position: relative;
+	padding: 20px 0;
+	border-bottom: 1px solid #d9dfec;
+	p {
+		font-size: 24px;
+		line-height: 33px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	button {
+		width: 30px;
+		height: 30px;
+		// cursor: pointer;
+		position: absolute;
+		display: inline;
+		// padding: 5px;
+		top: 22px;
+		right: 22px;
+		border: 1px solid white;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s;
+		&:hover {
+			background: rgba(108, 117, 132, 0.1);
+		}
+	}
+}
+
+.content {
+	padding: 20px;
+	border-bottom: 1px solid #d9dfec;
+	display: flex;
+	gap: 20px;
+	.map {
+		background: gray;
+		width: 540px;
+		height: 480px;
+	}
+	.option {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		.selection {
+			box-shadow: 0px 15px 50px rgba(163, 194, 217, 0.3);
+			border-radius: 20px;
+			position: relative;
+			width: 380px;
+			padding: 0 25px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			// &PopUp {
+			// 	display: none;
+			// }
+			&PopUp {
+				display: block;
+				z-index: 101;
+				position: absolute;
+				top: 70px;
+				right: 0;
+				background: #fff;
+				border-radius: 20px;
+				box-shadow: 0px 15px 50px rgba(163, 194, 217, 0.3);
+				padding: 10px;
+				max-height: 200px;
+				width: 360px;
+				overflow: auto;
+				.popUpText {
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 25px;
+					padding: 0;
+					margin-bottom: 15px;
+					position: relative;
+					&::after {
+						display: block;
+						position: absolute;
+						left: 0;
+						right: 0;
+						width: 0;
+						margin: 0 auto;
+						height: 2px;
+						background-color: $grey;
+						content: '';
+						transition: width 0.3s ease-out;
+					}
+					&:hover:after,
+					&:focus:after {
+						width: 100%;
+					}
+				}
+			}
+			svg {
+				transition: all 0.3s;
+			}
+			&:hover {
+				svg {
+					transform: translateY(3px);
+				}
+			}
+			span {
+				position: absolute;
+				top: 15px;
+				left: 25px;
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 19px;
+				color: $grey;
+			}
+			p {
+				padding-top: 40px;
+				padding-bottom: 16px;
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 25px;
+			}
+		}
+
+		&Title {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+			text-transform: uppercase;
+		}
+		.storeList {
+			height: 230px;
+			overflow: auto;
+			.listItem {
+				display: flex;
+				align-items: center;
+				margin-bottom: 16px;
+				margin-right: 20px;
+				img {
+					width: 56px;
+					height: 56px;
+				}
+				.itemInfo {
+					margin-left: 8px;
+					.storeName {
+						font-weight: 700;
+						font-size: 16px;
+						line-height: 20px;
+						margin-bottom: 4px;
+					}
+					.storeAddress {
+						font-size: 14px;
+						line-height: 19px;
+					}
+				}
+				button {
+					margin-left: auto;
+					font-weight: 600;
+					letter-spacing: 0.8px;
+					text-transform: uppercase;
+					padding: 7px 14px;
+					font-size: 16px;
+					line-height: 22px;
+					border-radius: 8px;
+					transition: all 0.1s;
+				}
+				.btnSelect {
+					color: #fff;
+					background: $red;
+					border: 2px solid $red;
+					&:hover {
+						padding-left: 18px;
+					}
+				}
+				.btnSelected {
+					color: $grey;
+					border: 2px solid $grey;
+					transition: all 0.2s;
+					&:hover {
+						color: #fff;
+						background: $grey;
+					}
+				}
+			}
+		}
+	}
+}

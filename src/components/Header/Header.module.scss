@@ -6,9 +6,6 @@
 	display: flex;
 	line-height: 22px;
 	align-items: center;
-	@media (max-width: 1024px) {
-		display: none;
-	}
 }
 
 .menuList {

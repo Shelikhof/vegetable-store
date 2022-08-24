@@ -132,13 +132,13 @@
 			background: #d9dfec;
 		}
 
-		svg {
+		.mapIcon {
 			path {
 				transition: all 0.5s;
 			}
 		}
 		&:hover {
-			svg {
+			.mapIcon {
 				path {
 					transform: translateY(-4px);
 				}
@@ -156,7 +156,7 @@
 				display: none;
 			}
 		}
-		svg {
+		.mapIcon {
 			margin-left: 22px;
 			@media (max-width: 1280px) {
 				margin-left: 0;

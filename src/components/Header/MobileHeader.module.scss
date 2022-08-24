@@ -3,12 +3,9 @@
 
 .wrapper {
 	height: 55px;
-	display: none;
+	display: flex;
 	justify-content: space-between;
 
-	@media (max-width: 1024px) {
-		display: flex;
-	}
 	div {
 		display: flex;
 		align-items: center;
