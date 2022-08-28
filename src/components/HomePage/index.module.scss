@@ -1,6 +1,8 @@
 @import '../../scss/components/container';
 @import '../../scss/libs/variables';
-
+.bodyHidden {
+	overflow-y: hidden;
+}
 .chooseWrapper {
 	background-image: url('../../assets/img/header-bg.jpg');
 	background-position: center;

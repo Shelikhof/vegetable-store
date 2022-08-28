@@ -7,14 +7,23 @@ import logo4 from '../../assets/img/logos/logo4.svg';
 import logo5 from '../../assets/img/logos/logo5.svg';
 import GroceryItem from './GroceryItem';
 import FoodSetItem from '../FoodSet/FoodSetItem';
-import ChooseMapPopUp from './ChooseMapPopUp';
+import MapPopUp from './PopUp/MapPopUp';
+import MobileMapPopUp from './PopUp/MobileMapPopUp';
+import { useAppSelector } from '../redux/hooks';
 
 const Home: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const { isDesktop } = useAppSelector((state) => state.isDesktop);
+	if (isOpen) {
+		document.body.classList.add(styles.bodyHidden);
+	} else {
+		document.body.classList.remove(styles.bodyHidden);
+	}
 	return (
 		<>
-			{isOpen && <ChooseMapPopUp isOpen setIsOpen={setIsOpen} />}
-			<div className={styles.chooseWrapper}>
+			{isOpen &&
+				(isDesktop ? <MapPopUp setIsOpen={setIsOpen} /> : <MobileMapPopUp setIsOpen={setIsOpen} />)}
+			<section className={styles.chooseWrapper}>
 				<div className={styles.container}>
 					<p className={styles.chooseWrapperTitle}>
 						YOU CAN <span className={styles.chooseWrapperTitleRed}>SAVE </span>
@@ -82,8 +91,8 @@ const Home: React.FC = () => {
 						</button>
 					</div>
 				</div>
-			</div>
-			<div className={styles.container}>
+			</section>
+			<section className={styles.container}>
 				<div className={styles.groceryListWrapper}>
 					<p className={styles.groceryListTitle}>
 						<span className='title'>BEST GROCERY DEALS FOR KIWIS</span>
@@ -101,8 +110,8 @@ const Home: React.FC = () => {
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className={styles.container}>
+			</section>
+			<section className={styles.container}>
 				<div className={styles.foodSetWrapper}>
 					<p className={styles.foodSetTitle}>
 						<span className='title'>Popular grocery sets</span>
@@ -130,8 +139,8 @@ const Home: React.FC = () => {
 						</svg>
 					</button>
 				</div>
-			</div>
-			<div className={styles.foodSearchWrapper}>
+			</section>
+			<section className={styles.foodSearchWrapper}>
 				<p>The site will help you choose the most optimal food cart</p>
 				<button>
 					<span>Food Search</span>
@@ -154,7 +163,7 @@ const Home: React.FC = () => {
 						</defs>
 					</svg>
 				</button>
-			</div>
+			</section>
 		</>
 	);
 };

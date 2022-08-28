@@ -1,0 +1,242 @@
+@import '../../../scss/libs/variables';
+
+.wrapper {
+	position: fixed;
+	top: 0;
+	bottom: -100px;
+	left: 0;
+	right: 0;
+	padding-bottom: 100px;
+	background: #eeeff1;
+	z-index: 100;
+	overflow: auto;
+	animation-duration: 0.5s;
+	animation-name: showPopUp;
+	@keyframes showPopUp {
+		from {
+			transform: translateX(-100%);
+		}
+
+		to {
+			transform: translateX(0);
+		}
+	}
+	.header {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding: 16px;
+		background: #fff;
+	}
+	.switch {
+		margin: 16px auto;
+		padding: 0 16px;
+		max-width: 568px;
+		ul {
+			display: flex;
+
+			li {
+				cursor: pointer;
+				width: 50%;
+				text-align: center;
+				color: $yellow;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 25px;
+				text-transform: uppercase;
+				position: relative;
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					background: #dae1ed;
+				}
+			}
+			.itemActive::after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				background: $yellow;
+			}
+		}
+	}
+	.contentLeft {
+		padding: 0 10px;
+		max-width: 500px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		.option {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			.selection {
+				box-shadow: 0px 15px 50px rgba(163, 194, 217, 0.3);
+				border-radius: 20px;
+				position: relative;
+				width: 100%;
+				padding: 0 25px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				cursor: pointer;
+				background: #fff;
+				&PopUp {
+					display: block;
+					z-index: 101;
+					position: absolute;
+					top: 70px;
+					right: 0;
+					background: #fff;
+					border-radius: 20px;
+					box-shadow: 0px 15px 50px rgba(163, 194, 217, 0.3);
+					padding: 10px;
+					max-height: 200px;
+					width: 100%;
+					overflow: auto;
+					.popUpText {
+						font-weight: 600;
+						font-size: 18px;
+						line-height: 25px;
+						padding: 0;
+						margin-bottom: 15px;
+						position: relative;
+						&::after {
+							display: block;
+							position: absolute;
+							left: 0;
+							right: 0;
+							width: 0;
+							margin: 0 auto;
+							height: 2px;
+							background-color: $grey;
+							content: '';
+							transition: width 0.3s ease-out;
+						}
+						&:hover:after,
+						&:focus:after {
+							width: 100%;
+						}
+					}
+				}
+				svg {
+					transition: all 0.3s;
+				}
+				&:hover {
+					svg {
+						transform: translateY(3px);
+					}
+				}
+				span {
+					position: absolute;
+					top: 15px;
+					left: 25px;
+					font-weight: 600;
+					font-size: 14px;
+					line-height: 19px;
+					color: $grey;
+				}
+				p {
+					padding-top: 40px;
+					padding-bottom: 16px;
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 25px;
+				}
+			}
+		}
+		.title {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+			text-transform: uppercase;
+			margin-top: 24px;
+		}
+		.storeList {
+			margin-top: 16px;
+			overflow: auto;
+			flex-grow: 1;
+			padding-bottom: 50px;
+			.listItem {
+				display: flex;
+				align-items: center;
+				margin-bottom: 16px;
+				margin-right: 20px;
+				img {
+					width: 56px;
+					height: 56px;
+					border-radius: 50%;
+				}
+				.itemInfo {
+					margin-left: 8px;
+					.storeName {
+						font-weight: 700;
+						font-size: 16px;
+						line-height: 20px;
+						margin-bottom: 4px;
+					}
+					.storeAddress {
+						font-size: 14px;
+						line-height: 19px;
+					}
+				}
+				button {
+					margin-left: auto;
+					font-weight: 600;
+					letter-spacing: 0.8px;
+					text-transform: uppercase;
+					padding: 7px 14px;
+					font-size: 16px;
+					line-height: 22px;
+					border-radius: 8px;
+					transition: all 0.1s;
+				}
+				.btnSelect {
+					color: #fff;
+					background: $red;
+					border: 2px solid $red;
+					&:hover {
+						padding-left: 18px;
+					}
+				}
+				.btnSelected {
+					color: $grey;
+					border: 2px solid $grey;
+					transition: all 0.2s;
+					&:hover {
+						color: #fff;
+						background: $grey;
+					}
+				}
+			}
+		}
+	}
+	.contentRight {
+		background: red;
+		width: 100%;
+		height: 100%;
+	}
+	.applyBtn {
+		position: fixed;
+		bottom: 16px;
+		display: block;
+		padding: 8px 130px;
+		background: $red;
+		border-radius: 10px;
+		color: #fff;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 25px;
+		transition: all 0.2s;
+		left: 50%;
+		margin-left: -157px;
+		box-shadow: 0px 460px 60px 500px rgba(255, 255, 255, 1);
+		&:hover {
+			transform: translateY(-5px);
+		}
+	}
+}

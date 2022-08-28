@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createRef, useEffect, useRef, useState } from 'react';
 import styles from './MobileHeader.module.scss';
 import menuOpenSVG from '../../assets/img/menu-open.svg';
 import shoppingCartSVG from '../../assets/img/shopping-cart.svg';
@@ -7,7 +7,11 @@ import HeaderMenu from './HeaderMenu';
 
 const MobileHeader: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
-
+	if (isOpen) {
+		document.body.classList.add(styles.bodyHidden);
+	} else {
+		document.body.classList.remove(styles.bodyHidden);
+	}
 	return (
 		<>
 			{isOpen && <HeaderMenu setIsOpen={setIsOpen} />}

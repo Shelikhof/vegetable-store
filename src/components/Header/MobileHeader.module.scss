@@ -1,6 +1,9 @@
 @import '../../scss/components/container';
 @import '../../scss/libs/variables';
 
+.bodyHidden {
+	overflow-y: hidden;
+}
 .wrapper {
 	height: 55px;
 	display: flex;
